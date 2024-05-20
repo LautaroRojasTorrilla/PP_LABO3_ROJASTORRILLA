@@ -1,0 +1,272 @@
+@font-face {
+    font-family: pokemon;
+    src: url(../assets/fonts/Pokemon_Solid.ttf);
+}
+
+header {
+    padding: 20px 20px;
+    background-image: url(../assets/images/background.jpeg);
+    background-position: center; 
+    flex-direction: column;
+    justify-content: center;
+
+
+    min-height: 15vh;
+    max-height: 50vh;
+}
+
+header div img {
+    width: 5rem;
+    height: 5rem;
+    margin-top: -10px;
+}
+
+
+header nav ul,
+footer nav ul {
+    text-decoration: none;
+    list-style-type: none;
+
+    flex-direction: row;
+    justify-content: right;
+
+    gap: 2rem;
+}
+
+header nav ul li a,
+footer nav ul li a {
+    color: white;
+    font-size: 20px;
+}
+
+header h1,
+.container-table h1 {
+    font-family: pokemon, sans-serif;
+    margin: 0px 0;
+    text-align: center;
+    font-size: 30px;
+    color: var(--secondary-color);
+    text-shadow:
+        1px 1px 0 var(--border-color),
+        -1px -1px 0 var(--border-color),
+        1px -1px 0 var(--border-color),
+        -1px 1px 0 var(--border-color),
+        1px 0 0 var(--border-color),
+        -1px 0 0 var(--border-color),
+        0 1px 0 var(--border-color),
+        0 -1px 0 var(--border-color);
+}
+
+.navegacion {
+    /* background-color: var(--secondary-color); */
+    padding-top: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .navegacion.flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navegacion.flex ul {
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+    }
+}
+
+.container-sections {
+    flex-direction: row;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-form {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+
+.radio-group {
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.25rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-input,
+.form-textarea,
+.form-input-icon {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.radio-label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.radio-input {
+    margin-right: 0.25rem;
+}
+
+.radio-text {
+    font-size: 0.875rem;
+}
+
+.form-article {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input-icon {
+    position: relative;
+    align-items: center;
+    width: 7rem;
+    /* Ancho relativo */
+    height: 3rem;
+    /* Alto relativo */
+}
+
+.input-icon-img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.form-input-icon {
+    padding-left: 35px;
+}
+
+.btn-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-guardar {
+    background-color: blue;
+}
+
+.btn-modificar {
+    background-color: green;
+}
+
+.btn-eliminar {
+    background-color: red;
+}
+
+.container-table {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.data-table {
+    width: 100%;
+    /* border-collapse: collapse; */
+    text-align: left;
+    border: 2px solid #333;
+}
+
+.data-table thead {
+    background-color: #C71585;
+    color: white;
+    text-transform: uppercase;
+}
+
+.data-table thead th {
+    padding: 12px 15px;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #ddd;
+    background-color: #ffffff;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.data-table tbody td {
+    border: 1px solid #333;
+    padding: 12px 15px;
+    color: #000000;
+}
+
+.container-footer {
+    justify-content: space-between;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav-footer {
+    margin-bottom: 10px;
+}
+
+.nav-footer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-footer-list li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.nav-footer-list li:last-child {
+    margin-right: 0;
+}
+
+.nav-footer-list li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-footer-list li a:hover {
+    text-decoration: underline;
+}
+
+.footer-text {
+    font-size: 14px;
+    text-align: right;
+}
+
+.footer-year {
+    font-weight: bold;
+}

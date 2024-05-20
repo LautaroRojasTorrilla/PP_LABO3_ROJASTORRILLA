@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+
+    <script src="./js/scripts.js" type="module" defer></script>
+</head>
+
+<title>Primer Parcial Laboratorio 3</title>
+
+<body>
+
+    <header class="flex">
+        <div class="navegacion flex">
+            <img src="assets/images/logo.svg" alt="Logo Principal">
+            <ul class="flex">
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Anuncio</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+        <h1>ADMINISTRADOR DE MONEDAS</h1>
+    </header>
+
+
+    <div class="container-sections flex">
+        <section class="container-form">
+            <h2>Información de la Moneda</h2>
+
+            <form action="" method="post" id="form-item">
+
+                <div class="form-group">
+                    <label for="nombre" class="form-label">NOMBRE:</label>
+                    <input type="text" id="nombre" required name="nombre" placeholder="Ingrese nombre"
+                        class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="simbolo" class="form-label">SIMBOLO:</label>
+                    <input type="text" id="simbolo" required name="simbolo" placeholder="Ingrese simbolo"
+                        class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="precio" class="form-label">PRECIO ACTUAL USD:</label>
+                    <input type="number" id="precio" required name="precio" placeholder="Ingrese precio"
+                        class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">TIPO DE CONSENSO:</label>
+                    <div class="select-consenso">
+                        <select id= "consenso" class="form-input">
+                            <option value="">Seleccione</option>
+                            <option value="proof_of_work">Proof of Work</option>
+                            <option value="proof_of_stake">Proof of Stake</option>
+                        </select>
+                    </div>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad" class="form-label">CANTIDAD EN CIRCULACION:</label>
+                    <input type="number" id="cantidad" required name="cantidad" placeholder="Ingrese cantidad"
+                        class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">ALGORITMO:</label>
+                    <div class="select-algoritmo">
+                        <select id="algoritmo" class="form-input">
+                            <option value="">Seleccione</option>
+                            <option value="ethash">Ethash</option>
+                            <option value="scrypt">Scrypt</option>
+                            <option value="x11">X11</option>
+                        </select>
+                    </div>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sweb" class="form-label">SITIO WEB:</label>
+                    <input type="text" id="sweb" required name="sweb" placeholder="Ingrese sitio web"
+                        class="form-input">
+                </div>
+
+                <nav class="btn-container flex">
+                    <button type="submit" id="btn-guardar" class="btn btn-guardar">Guardar</button>
+                    <button type="submit" id="btn-modificar" class="btn btn-modificar">Modificar</button>
+                    <button type="submit" id="btn-eliminar" class="btn btn-eliminar">Eliminar</button>
+                </nav>
+            </form>
+
+        </section>
+
+        <section class="container-table">
+            <h1>Datos Registrados</h1>
+            <div class="table-responsive">
+                <table id="data-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Simbolo</th>
+                            <th scope="col">Fecha Creacion</th>
+                            <th scope="col">Precio Actual</th>
+                            <th scope="col">Consenso</th>
+                            <th scope="col">Cantidad Circulacion</th>
+                            <th scope="col">Algoritmo</th>
+                            <th scope="col">Sitio Web</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí irán las filas de datos -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="spinner" class="spinner"></div>
+    </div>
+
+    <footer class="container-footer flex">
+        <nav class="nav-footer">
+            <ul class="nav-footer-list">
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Anuncio</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <p class="footer-text">Todos los derechos reservados <span class="footer-year">2024</span> &copy;</p>
+    </footer>
+
+</body>
+
+</html>
