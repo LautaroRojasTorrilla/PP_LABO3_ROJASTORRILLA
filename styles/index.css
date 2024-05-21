@@ -182,6 +182,13 @@ header h1,
     background-color: red;
 }
 
+.btn-borrar{
+    justify-content: flex-end;
+    background-color: rgb(212, 8, 8);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .container-table {
     padding: 20px;
     max-width: 1200px;

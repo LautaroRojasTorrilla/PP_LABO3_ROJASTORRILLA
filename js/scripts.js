@@ -1,5 +1,5 @@
 import { Crypto } from "./crypto.js";
-import { leerLS, escribirLS, jsonToObject, objectToJson } from "./local-storage.js";
+import { leerLS, escribirLS, jsonToObject, objectToJson, limpiar } from "./local-storage.js";
 import { mostrarSpinner, ocultarSpinner } from "./spinner.js";
 
 // Constantes y variables globales
@@ -8,8 +8,8 @@ const formulario = document.forms[0];
 const btnGuardar = document.getElementById("btn-guardar");
 const btnModificar = document.getElementById("btn-modificar");
 const btnEliminar = document.getElementById("btn-eliminar");
+const btnBorrar = document.getElementById("btn-borrar");
 const items = [];
-
 
 document.addEventListener("DOMContentLoaded", onInit);
 
@@ -19,12 +19,24 @@ function onInit() {
     escucharGuardar();
     escucharModificar();
     agregarEventoClicTabla();
+    escucharBorrarTodo(); // Agregamos la función de escucha para el botón de borrar
+}
+
+function escucharBorrarTodo() {
+    btnBorrar.addEventListener("click", () => {
+        const confirmacion = confirm("¿Estás seguro de que quieres borrar todos los datos?");
+        if (confirmacion) {
+            limpiar(KEY_STORAGE); // Limpiar el local storage
+            items.length = 0; // Vaciar el array de items
+            rellenarTabla(); // Vaciar la tabla
+            alert("Todos los datos han sido borrados.");
+        }
+    });
 }
 
 function agregarEventoClicTabla() {
     const tbody = document.querySelector("#data-table tbody");
     const columnas = ["id", "nombre", "simbolo", "fechaCreacion", "precioActual", "consenso", "cantidadCirculacion", "algoritmo","sitioWeb"];
-
 
     tbody.addEventListener("click", (event) => {
         const fila = event.target.closest("tr");
@@ -36,7 +48,7 @@ function agregarEventoClicTabla() {
 
         const encabezados = document.querySelectorAll("#data-table thead th");
 
-        columnasFila .forEach((celda, index) => {
+        columnasFila.forEach((celda, index) => {
             const columna = encabezados[index].textContent.trim(); 
             console.log(columna);
             const valor = celda.textContent.trim();
@@ -77,7 +89,6 @@ async function cargarItems() {
         
         items.push(model);
     });
-
 
     ocultarSpinner();
 
@@ -150,7 +161,7 @@ function obtenerModeloDeFormulario() {
     const algoritmoSelect = document.getElementById('algoritmo');
     const algoritmo = algoritmoSelect.options[algoritmoSelect.selectedIndex].value;
     const sitioWeb = formulario.querySelector("#sweb").value;
-    
+
     console.log(simbolo);
     return new Crypto(id, nombre, simbolo, fechaCreacion, precioActual, consenso, cantidadCirculacion, algoritmo, sitioWeb);
 }
@@ -225,12 +236,10 @@ function escucharGuardar() {
                 await guardarModelo(model);
                 actualizarFormulario();
                 cargarItemsYRellenarTabla();
-            }
-            catch (error) {
+            } catch (error) {
                 mostrarError(error);
             }
-        }
-        else {
+        } else {
             mostrarAlerta(respuesta.rta);
         }
     });
