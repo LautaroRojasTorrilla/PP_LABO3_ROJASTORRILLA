@@ -36,11 +36,11 @@ function escucharBorrarTodo() {
 
 function agregarEventoClicTabla() {
     const tbody = document.querySelector("#data-table tbody");
-    const columnas = ["id", "nombre", "simbolo", "fechaCreacion", "precioActual", "consenso", "cantidadCirculacion", "algoritmo","sitioWeb"];
+    const columnas = ["id", "nombre", "simbolo", "fechaCreacion", "precioActual", "consenso", "cantidadCirculacion", "algoritmo", "sitioWeb"];
 
     tbody.addEventListener("click", (event) => {
         const fila = event.target.closest("tr");
-        const columnasFila  = fila.querySelectorAll("td");
+        const columnasFila = fila.querySelectorAll("td");
 
         console.log(columnas);
 
